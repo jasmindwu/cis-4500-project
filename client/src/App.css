@@ -1,0 +1,29 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+.app__bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: var(--bar-height);
+  background: var(--brown);
+  z-index: 100;
+}
+
+.app__bar--top {
+  top: 0;
+}
+
+.app__bar--bottom {
+  bottom: 0;
+}
+
+.app__main {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--bar-height);
+  padding-bottom: var(--bar-height);
+  min-height: 100vh;
+}
