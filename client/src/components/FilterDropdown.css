@@ -6,33 +6,40 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background: var(--white);
-  border: 1px solid var(--border);
+  padding: 9px 18px;
+  border-radius: 22px;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
   font-family: var(--font-body);
   font-style: italic;
   font-size: 18px;
   color: var(--text-muted-dark);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  box-shadow: var(--shadow-sm);
 }
 
 .filter-chip:hover {
   border-color: var(--coral);
   color: var(--coral);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .filter-chip--active {
-  background: var(--coral);
+  background: linear-gradient(135deg, var(--coral) 0%, #e8635a 100%);
   border-color: var(--coral-border);
   color: var(--white);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
 }
 
 .filter-chip--active:hover {
-  background: #d46c64;
+  background: linear-gradient(135deg, #d46c64 0%, #d4554c 100%);
   color: var(--white);
+  transform: translateY(-2px);
 }
 
 .filter-chip__count {
@@ -51,7 +58,7 @@
 
 .filter-chip__arrow {
   font-size: 12px;
-  transition: transform 0.2s;
+  transition: transform 0.25s;
   font-style: normal;
 }
 
@@ -63,28 +70,32 @@
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  min-width: 200px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 8px 0;
-  box-shadow: 0 8px 24px rgba(131, 69, 52, 0.12);
+  min-width: 220px;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: var(--shadow-lg);
   z-index: 50;
-  max-height: 260px;
+  max-height: 280px;
   overflow-y: auto;
+  animation: menuSlideIn 0.2s ease-out;
 }
 
 .filter-dropdown__option {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
+  padding: 10px 14px;
   cursor: pointer;
   font-family: var(--font-body);
   font-style: italic;
   font-size: 16px;
   color: var(--text-dark);
-  transition: background 0.15s;
+  border-radius: 10px;
+  transition: all 0.15s;
 }
 
 .filter-dropdown__option:hover {
@@ -101,4 +112,15 @@
 
 .filter-dropdown__label {
   flex: 1;
+}
+
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

@@ -2,7 +2,160 @@
   position: relative;
   min-height: 100vh;
   background: var(--cream);
+  overflow: hidden;
 }
+
+/* ── Animated background ── */
+
+.app__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 70% 0%, rgba(252, 239, 234, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 100%, rgba(248, 223, 213, 0.4) 0%, transparent 45%);
+}
+
+.app__bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0;
+  will-change: transform;
+  animation: blobFloat 16s ease-in-out infinite, blobFadeIn 1.5s ease-out forwards;
+}
+
+.app__bg-blob--1 {
+  width: 550px;
+  height: 550px;
+  background: rgba(223, 121, 112, 0.16);
+  top: -12%;
+  right: -8%;
+  animation-delay: 0s;
+}
+
+.app__bg-blob--2 {
+  width: 450px;
+  height: 450px;
+  background: rgba(220, 99, 65, 0.12);
+  bottom: -8%;
+  left: 2%;
+  animation-delay: -6s;
+  animation-duration: 21s;
+}
+
+.app__bg-blob--3 {
+  width: 380px;
+  height: 380px;
+  background: rgba(248, 223, 213, 0.35);
+  top: 35%;
+  left: 45%;
+  animation-delay: -11s;
+  animation-duration: 24s;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20%      { transform: translate(25px, -18px) scale(1.04); }
+  40%      { transform: translate(-15px, 22px) scale(0.97); }
+  60%      { transform: translate(18px, -8px) scale(1.02); }
+  80%      { transform: translate(-22px, 12px) scale(0.98); }
+}
+
+@keyframes blobFadeIn {
+  to { opacity: 1; }
+}
+
+/* ── Floating food decorations ── */
+
+.app__bg-deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  image-rendering: auto;
+}
+
+/* 1: pixel croissant — top-right corner */
+.app__bg-deco--1 {
+  width: 280px;
+  top: -3%;
+  right: 4%;
+  filter: drop-shadow(0 0 40px rgba(220, 160, 80, 0.25));
+  animation:
+    decoFadeIn 2s ease-out 0.4s forwards,
+    decoBob 18s ease-in-out 0.4s infinite;
+  --bob: -6px;
+  --r1: -15deg;
+  --r2: -13deg;
+}
+
+/* 2: coffee — right side, toward middle */
+.app__bg-deco--2 {
+  width: 260px;
+  top: 30%;
+  right: 20%;
+  filter: drop-shadow(0 0 35px rgba(200, 150, 80, 0.25));
+  animation:
+    decoFadeIn 2s ease-out 0.8s forwards,
+    decoBob 22s ease-in-out 0.8s infinite;
+  --bob: -5px;
+  --r1: 10deg;
+  --r2: 8deg;
+}
+
+/* 3: shiny croissant — huge, peeking from bottom-left corner */
+.app__bg-deco--3 {
+  width: 550px;
+  bottom: -140px;
+  left: calc(var(--sidebar-width) - 80px);
+  filter: drop-shadow(0 0 50px rgba(220, 170, 80, 0.2));
+  animation:
+    decoFadeIn 2s ease-out 1.2s forwards,
+    decoBob 20s ease-in-out 1.2s infinite;
+  --bob: -5px;
+  --r1: -12deg;
+  --r2: -10deg;
+}
+
+/* 4: cinnamonroll — bottom-right */
+.app__bg-deco--4 {
+  width: 275px;
+  bottom: 5%;
+  right: -4%;
+  filter: drop-shadow(0 0 35px rgba(200, 150, 80, 0.25));
+  animation:
+    decoFadeIn 2s ease-out 1.5s forwards,
+    decoBob 24s ease-in-out 1.5s infinite;
+  --bob: -5px;
+  --r1: -14deg;
+  --r2: -12deg;
+}
+
+/* 5: donut — center area, upper half */
+.app__bg-deco--5 {
+  width: 260px;
+  top: 8%;
+  left: 22%;
+  filter: drop-shadow(0 0 40px rgba(220, 160, 80, 0.25));
+  animation:
+    decoFadeIn 2s ease-out 0.6s forwards,
+    decoBob 19s ease-in-out 0.6s infinite;
+  --bob: -6px;
+  --r1: -14deg;
+  --r2: -12deg;
+}
+
+@keyframes decoFadeIn {
+  to { opacity: 0.14; }
+}
+
+@keyframes decoBob {
+  0%, 100% { transform: translateY(0) rotate(var(--r1)); }
+  50%      { transform: translateY(var(--bob)) rotate(var(--r2)); }
+}
+
+/* ── Top & bottom bars ── */
 
 .app__bar {
   position: fixed;
@@ -21,7 +174,11 @@
   bottom: 0;
 }
 
+/* ── Main content ── */
+
 .app__main {
+  position: relative;
+  z-index: 1;
   margin-left: var(--sidebar-width);
   padding-top: var(--bar-height);
   padding-bottom: var(--bar-height);

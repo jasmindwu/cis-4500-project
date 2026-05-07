@@ -1,0 +1,121 @@
+.tech-stack {
+  padding: 0 48px 56px;
+  position: relative;
+  min-height: 100%;
+  max-width: 980px;
+}
+
+.tech-stack__title {
+  margin-top: 120px;
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--brown);
+  line-height: 1.15;
+}
+
+.tech-stack__lead {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin: 0 0 14px;
+  max-width: 36rem;
+}
+
+.tech-stack__figma-btn {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--coral) 0%, #e8635a 100%);
+  box-shadow: 0 2px 10px var(--coral-glow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tech-stack__figma-btn:hover {
+  box-shadow: 0 4px 14px var(--coral-glow);
+}
+
+.tech-stack__figma-btn:active {
+  transform: scale(0.98);
+}
+
+.tech-stack__panel {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-md);
+}
+
+.tech-stack__panel--icons {
+  padding: 20px;
+}
+
+.tech-stack__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+  gap: 14px;
+}
+
+.tech-stack__card {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 14px 10px 12px;
+  margin: 0; /* reset default <figure> margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tech-stack__card:hover {
+  border-color: rgba(223, 121, 112, 0.45);
+  box-shadow: 0 6px 20px rgba(223, 121, 112, 0.12);
+}
+
+.tech-stack__caption {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.25;
+  color: var(--brown);
+  text-align: center;
+  margin: 0;
+  max-width: 11rem;
+}
+
+.tech-stack__icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 239, 234, 0.9) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(80, 60, 50, 0.08);
+}
+
+.tech-stack__svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.tech-stack__svg--express text {
+  dominant-baseline: middle;
+}

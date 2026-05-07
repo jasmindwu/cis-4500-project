@@ -1,0 +1,25 @@
+.api-timing-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-muted);
+  justify-content: flex-end;
+}
+
+.api-timing-label__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  opacity: 0.6;
+}
+
+.api-timing-label__cached {
+  color: var(--brown);
+  opacity: 0.85;
+}

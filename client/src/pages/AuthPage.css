@@ -1,0 +1,208 @@
+.auth-page {
+  padding: 0 48px 48px;
+  max-width: 440px;
+}
+
+.auth-page__title {
+  margin-top: 120px;
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--brown);
+}
+
+.auth-page__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.auth-page__tab {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--text-muted-dark);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.auth-page__tab--active {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--white);
+}
+
+.auth-page__panel {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-page__lead {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.auth-page__muted {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.auth-page__code {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.auth-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-page__label {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-muted-dark);
+}
+
+.auth-page__input {
+  font-family: var(--font-body);
+  font-size: 17px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+}
+
+.auth-page__error {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px;
+  color: #c0392b;
+  margin: 0;
+}
+
+.auth-page__btn {
+  margin-top: 4px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 17px;
+  background: linear-gradient(135deg, var(--coral) 0%, #e8635a 100%);
+  color: var(--white);
+}
+
+.auth-page__btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-page__back {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--coral);
+  text-decoration: none;
+}
+
+.auth-page__back:hover {
+  text-decoration: underline;
+}
+
+.auth-page__oauth-wrap {
+  margin-top: 18px;
+  max-width: 440px;
+}
+
+.auth-page__oauth-label {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-muted-dark);
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.auth-page__oauth-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.auth-page__oauth-btn {
+  flex: 1 1 110px;
+  min-width: 100px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-dark);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.auth-page__oauth-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 1);
+  border-color: var(--coral);
+}
+
+.auth-page__oauth-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.auth-page__oauth-btn--google {
+  border-color: rgba(66, 133, 244, 0.35);
+}
+
+.auth-page__oauth-row--two .auth-page__oauth-btn {
+  flex: 1 1 140px;
+  max-width: 200px;
+}
+
+.auth-page__oauth-btn--github {
+  border-color: rgba(36, 41, 47, 0.35);
+}
+
+.auth-page__oauth-hint {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 14px 0 0;
+  text-align: center;
+}

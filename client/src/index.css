@@ -1,9 +1,12 @@
 :root {
   --cream: #fff9f6;
   --brown: #834534;
+  --brown-dark: #6b3628;
   --peach: #fcefea;
+  --peach-rich: #f8dfd5;
   --coral: #df7970;
   --coral-border: #c66a62;
+  --coral-glow: rgba(223, 121, 112, 0.25);
   --logo-orange: #dc6341;
   --cream-text: #fff6e0;
   --border: #ece3de;
@@ -12,12 +15,19 @@
   --text-muted: #887771;
   --text-muted-dark: #71605c;
   --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.5);
 
   --font-display: 'Gluten', cursive;
   --font-body: 'Instrument Serif', serif;
 
-  --sidebar-width: 260px;
+  --sidebar-width: 220px;
   --bar-height: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(131, 69, 52, 0.06);
+  --shadow-md: 0 4px 12px rgba(131, 69, 52, 0.08);
+  --shadow-lg: 0 8px 32px rgba(131, 69, 52, 0.10);
+  --shadow-glow: 0 0 24px rgba(223, 121, 112, 0.15);
 }
 
 *,
@@ -31,6 +41,7 @@
 body {
   font-family: var(--font-body);
   background: var(--cream);
+  min-height: 100vh;
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,4 +65,26 @@ input {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+::selection {
+  background: var(--coral);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--peach-rich);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--coral);
 }
